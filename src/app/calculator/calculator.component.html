@@ -1,0 +1,115 @@
+<div class="bg-img">
+  <div class="container">
+    <div class="wrapper">
+      <div class="row">
+        <div class="col-sm-6">
+          <h2>We make it super simple !</h2>
+          <div class="mb-2">
+            <span class="sub-heading">Just four steps and your loan ready</span>
+          </div>
+          <div class="card-columns">
+            <div class="card bg-primary">
+              <div class="card-body text-center">
+                <p class="card-text">Some text inside the first card</p>
+              </div>
+            </div>
+            <div class="card bg-warning">
+              <div class="card-body text-center">
+                <p class="card-text">Some text inside the second card</p>
+              </div>
+            </div>
+            <div class="card bg-success">
+              <div class="card-body text-center">
+                <p class="card-text">Some text inside the third card</p>
+              </div>
+            </div>
+            <div class="card bg-danger">
+              <div class="card-body text-center">
+                <p class="card-text">Some text inside the fourth card</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="main-text">Eligibility Calculator</div>
+          <div class="card border-primary mb-3 calculator-card">
+            <div class="d-flex">
+              <div class="form-one">
+                <div class="card-body">
+                  <div class="card-subtitle">Monthly Income</div>
+                  <div>Rs. {{ incomeValue }}</div>
+                  <p class="card-text">
+                    <mv-slider
+                      [(value)]="value1"
+                      [min]="0"
+                      [max]="100"
+                      [enabled]="enabled"
+                      (change)="onChangeIncome($event)"
+                    ></mv-slider>
+                  </p>
+                </div>
+                <div class="card-body">
+                  <div class="card-subtitle">Monthly Expense</div>
+                  <div>Rs. {{ expenseValue }}</div>
+                  <p class="card-text">
+                    <mv-slider
+                      [(value)]="value2"
+                      [min]="0"
+                      [max]="100"
+                      [enabled]="enabled"
+                      (change)="onChangeExpense($event)"
+                    ></mv-slider>
+                  </p>
+                </div>
+                <div class="card-body">
+                  <div class="card-subtitle mb-2">Repayment Tenure</div>
+                  <p class="card-text">
+                    <select
+                      [(ngModel)]="duration"
+                      class="form-control col-lg-12"
+                    >
+                      <option
+                        *ngFor="let op of optionList"
+                        [ngValue]="op.value"
+                      >
+                        {{ op.name }}
+                      </option>
+                    </select>
+                  </p>
+                </div>
+                <div class="card-body">
+                  <div class="card-subtitle mb-2">
+                    Do you have any existing loans ?
+                    <input
+                      type="checkbox"
+                      data-toggle="toggle"
+                      data-style="ios"
+                      [(ngModel)]="isChecked"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="form-two content-two">
+                <div class="wrapper-inner">
+                  <div class="sub-text">EMI: {{ calculatedValue }}</div>
+                  <button
+                    class="btn btn-light rounded-pill mb-2"
+                    (click)="calculate()"
+                  >
+                    GET MONEY
+                  </button>
+                   <button
+                    class="btn btn-light rounded-pill"
+                    (click)="reset()"
+                  >
+                    RESET
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

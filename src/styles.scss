@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+.calculator-card {
+  .slider-handle {
+    top: 2px;
+    width: 15px;
+    height: 15px;
+    background-image: linear-gradient(to bottom, #337ab7 0, #b7a3bf 100%);
+  }
+  .card-body {
+    .toggle.ios,
+    .toggle-on.ios,
+    .toggle-off.ios {
+      border-radius: 20rem;
+    }
+
+    .toggle.ios .toggle-handle {
+      border-radius: 20rem;
+    }
+  }
+}

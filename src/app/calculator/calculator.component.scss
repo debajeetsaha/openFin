@@ -1,0 +1,39 @@
+.bg-img {
+    background-image: url(../../assets/bg.jpg);
+    height: 100vh;
+    background-repeat: repeat;
+    background-size: contain;
+    .wrapper {
+        padding: 15px;
+    }
+}
+.calculator-card {
+    width: 480px;
+}
+.main-text {
+    padding: 15px 0;
+    font-weight: 600;
+}
+.form-one {
+    flex: 0.7;
+}
+.form-two {
+    flex: 0.3;
+    background-color: #663399;
+}
+.content-two {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .wrapper-inner {
+        display: flex;
+        flex-direction: column;
+        .sub-text {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+    }
+}
+.sub-heading {
+    color: #a2a2a2;
+}
